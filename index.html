@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f3f0e8">
+    <meta name="description" content="Личный план и дневник испанского: аудирование и устная речь, 26 недель по два часа в день.">
+    <title>Испанский на слух и в речи — план на 6 месяцев</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="На главную">
+        <span class="brand-mark">ES</span><span>Практика языка <span class="brand-sub">Личный кабинет</span></span>
+      </a>
+      <div class="top-actions">
+        <button id="backup-button" class="button button-quiet" type="button">Экспорт данных</button>
+        <label class="button button-quiet import-label" for="import-file">Импорт копии</label>
+        <input id="import-file" type="file" accept="application/json,.json" hidden>
+      </div>
+    </header>
+
+    <main id="inicio" class="shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="live-dot"></span> ТВОЙ МАРШРУТ · 26 НЕДЕЛЬ</p>
+          <h1 id="page-title">Испанский,<br><em>который слышно.</em></h1>
+          <p class="hero-text">Два часа в день на понимание живой речи и уверенный разговор. Небольшие шаги, регулярная практика, заметный прогресс.</p>
+          <div class="hero-meta"><span class="meta-icon">◷</span> 2 часа в день <span class="meta-separator">·</span> 14 часов в неделю <span class="meta-separator">·</span> 364 часа за 6 месяцев</div>
+          <label class="start-picker" for="start-date">Начало плана <input id="start-date" type="date"></label>
+        </div>
+        <div class="hero-stamp" aria-hidden="true"><span>ES</span><small>ESPAÑOL<br>EN VOZ ALTA</small><b>01—26</b></div>
+      </section>
+
+      <section class="overview" aria-label="Общий прогресс">
+        <article class="stat-card stat-progress">
+          <div class="stat-heading"><span>Путь пройден</span><span id="overall-percent" class="stat-value">0%</span></div>
+          <div class="progress-track" role="progressbar" aria-label="Общий прогресс курса" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="overall-bar"></span></div>
+          <div class="stat-foot"><span id="days-done">0 занятий</span><span>из 182</span></div>
+        </article>
+        <article class="stat-card stat-small"><span class="stat-icon">◷</span><span class="stat-label">Время практики</span><strong id="hours-total">0 <small>ч</small></strong><span class="stat-note">учтённых часов</span></article>
+        <article class="stat-card stat-small"><span class="stat-icon">↗</span><span class="stat-label">Текущая неделя</span><strong id="current-week">01 <small>/ 26</small></strong><span id="week-phase" class="stat-note">Старт и слух</span></article>
+        <article class="stat-card stat-small"><span class="stat-icon">✳</span><span class="stat-label">Серия занятий</span><strong id="streak">0 <small>дн.</small></strong><span class="stat-note">подряд</span></article>
+      </section>
+
+      <div class="content-grid">
+        <section class="main-column">
+          <div class="section-heading">
+            <div><p class="eyebrow">ПЛАН НА СЕГОДНЯ</p><h2 id="today-title">Твоя практика</h2></div>
+            <button id="today-button" class="text-button" type="button">К сегодняшнему дню ↗</button>
+          </div>
+          <article id="today-card" class="today-card"></article>
+
+          <div class="section-heading week-heading">
+            <div><p class="eyebrow">ТЕКУЩИЙ ЭТАП</p><h2 id="week-title">План недели</h2></div>
+            <div class="week-nav"><button id="prev-week" class="icon-button" type="button" aria-label="Предыдущая неделя">←</button><span id="week-indicator">01 / 26</span><button id="next-week" class="icon-button" type="button" aria-label="Следующая неделя">→</button></div>
+          </div>
+          <div id="week-summary" class="week-summary"></div>
+          <div id="week-days" class="week-days"></div>
+        </section>
+
+        <aside class="side-column">
+          <article class="side-card rhythm-card">
+            <div class="side-card-heading"><div><p class="eyebrow">УСТОЙЧИВЫЙ РИТМ</p><h3>Твои 120 минут</h3></div><span class="clock-face">◷</span></div>
+            <ol class="rhythm-list">
+              <li><span class="rhythm-time">35 мин</span><span><b>Слушай</b><small>сначала без текста</small></span><i>01</i></li>
+              <li><span class="rhythm-time">25 мин</span><span><b>Замечай</b><small>ключевые фразы и смысл</small></span><i>02</i></li>
+              <li><span class="rhythm-time">30 мин</span><span><b>Повторяй</b><small>вслух, за говорящим</small></span><i>03</i></li>
+              <li><span class="rhythm-time">30 мин</span><span><b>Говори</b><small>пересказ или разговор</small></span><i>04</i></li>
+            </ol>
+            <p class="rhythm-tip">Грамматика — только если ошибка мешает выразить мысль. Разобрал правило? Сразу используй его в устном ответе.</p>
+          </article>
+
+          <article class="side-card checkpoint-card">
+            <p class="eyebrow">ПРОВЕРКА КАЖДЫЕ 4 НЕДЕЛИ</p>
+            <h3>Запиши себя</h3>
+            <p>Одна и та же задача покажет, как меняется речь: подготовь короткий рассказ, затем ответь на вопросы без сценария.</p>
+            <div id="checkpoint" class="checkpoint-next"></div>
+          </article>
+
+          <article class="side-card note-card">
+            <span class="note-mark">“</span>
+            <p>Задача не в том, чтобы понять каждое слово. Лови смысл, держи разговор и спокойно проси уточнить.</p>
+            <span class="note-sign">ОДИН ДЕНЬ ЗА ДРУГИМ</span>
+          </article>
+        </aside>
+      </div>
+
+      <section class="skill-trend" aria-labelledby="skill-trend-title">
+        <div class="section-heading"><div><p class="eyebrow">САМООЦЕНКА ПО НЕДЕЛЯМ</p><h2 id="skill-trend-title">Слух и речь в динамике</h2></div><div class="chart-legend"><span><i class="legend-listening"></i>Понимание</span><span><i class="legend-speaking"></i>Речь</span></div></div>
+        <div id="skill-chart" class="skill-chart" aria-label="Средняя оценка понимания и речи по неделям"></div>
+        <p class="chart-note">Оценивай себя после занятия от 1 до 5. График помогает замечать динамику; это не официальный тест уровня.</p>
+      </section>
+
+      <section class="roadmap-section">
+        <div class="section-heading"><div><p class="eyebrow">КАРТА МАРШРУТА</p><h2>Шесть месяцев роста</h2></div><p class="roadmap-note">Самооценка — по конкретным задачам; результат CEFR подтверждается отдельной оценкой речи и аудирования.</p></div>
+        <div id="roadmap" class="roadmap"></div>
+      </section>
+
+      <footer class="footer"><span>ПРАКТИКА · ПОВТОРЕНИЕ · ЖИВАЯ РЕЧЬ</span><span id="storage-status">Данные сохраняются в этом браузере</span></footer>
+    </main>
+
+    <dialog id="log-dialog" class="log-dialog">
+      <form method="dialog" id="log-form">
+        <div class="dialog-heading"><div><p class="eyebrow">ДНЕВНИК ПРАКТИКИ</p><h2 id="dialog-title">Занятие</h2></div><button class="icon-button" value="cancel" aria-label="Закрыть">×</button></div>
+        <p id="dialog-task" class="dialog-task"></p>
+        <input id="entry-date" type="hidden">
+        <div class="form-row">
+          <label for="entry-minutes">Минут занимался(ась)</label><input id="entry-minutes" type="number" min="0" max="480" step="5" value="120">
+        </div>
+        <div class="ratings">
+          <label>Понимание на слух <select id="entry-listening"><option value="">Пока не оценивал(а)</option><option value="1">1 · Пока трудно</option><option value="2">2 · Понимаю часть</option><option value="3">3 · В целом понятно</option><option value="4">4 · Почти всё понял(а)</option><option value="5">5 · Уверенно понял(а)</option></select></label>
+          <label>Устная речь <select id="entry-speaking"><option value="">Пока не оценивал(а)</option><option value="1">1 · Пока трудно</option><option value="2">2 · Говорю с паузами</option><option value="3">3 · Могу объясниться</option><option value="4">4 · Говорю уверенно</option><option value="5">5 · Говорю свободно</option></select></label>
+        </div>
+        <label class="notes-label" for="entry-notes">Заметка: что получилось / что повторить</label><textarea id="entry-notes" rows="4" placeholder="Например: понял сюжет без субтитров, повторить выражения про планы"></textarea>
+        <div class="dialog-actions"><button id="delete-entry" class="button button-danger" type="button">Снять отметку</button><button class="button button-primary" value="save">Сохранить занятие</button></div>
+      </form>
+    </dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
+
